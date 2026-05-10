@@ -31,9 +31,9 @@ export default function Home() {
               transition={{ duration: 0.8 }}
               className="flex flex-col gap-6"
             >
-              <h1 className="text-4xl sm:text-5xl lg:text-get-6xl font-black leading-tight text-secondary">
+              <h1 className="text-4xl sm:text-5xl lg:text-get-6xl font-black heading-modern text-transparent bg-clip-text bg-gradient-to-l from-secondary to-gray-600">
                 تغيير حياتك، <br/>
-                <span className="text-primary font-light">استعادة صحتك</span>
+                <span className="text-primary font-bold">استعادة صحتك</span>
               </h1>
               
               <p className="text-lg text-gray-500 font-medium max-w-xl leading-relaxed">
@@ -65,11 +65,11 @@ export default function Home() {
                <img 
                  src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?q=80&w=1000&auto=format&fit=crop" 
                  alt="طبيب"
-                 className="w-[85%] h-full object-cover object-top rounded-[2rem] shadow-2xl relative z-10 border-8 border-white" 
+                 className="w-[85%] h-full object-cover object-top rounded-[2rem] shadow-[0_20px_50px_-12px_rgba(51,204,153,0.3)] relative z-10 border-8 border-white" 
                />
                
                {/* Floating Badge */}
-               <div className="absolute top-1/4 -right-10 bg-white p-4 rounded-2xl shadow-xl z-20 flex items-center gap-4">
+               <div className="absolute top-1/4 -right-10 glass-panel p-4 rounded-2xl z-20 flex items-center gap-4 hover:-translate-y-1 transition-transform duration-300">
                  <div className="bg-orange-100 p-2 rounded-full text-orange-500">
                     <Icons.Star className="w-6 h-6 fill-current" />
                  </div>
@@ -125,7 +125,7 @@ export default function Home() {
               
               {/* Text Layout (RTL -> Right) */}
               <div className="order-1 lg:order-1 relative z-10">
-                 <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-secondary leading-tight mb-6">
+                 <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-secondary heading-modern mb-6">
                     نوفر أفضل رعاية طبية <br className="hidden sm:block" /> ووسائل راحة للمرضى
                  </h2>
                  <p className="text-gray-500 font-medium leading-relaxed mb-8 text-lg">
@@ -184,22 +184,22 @@ export default function Home() {
                  {/* Decorative background */}
                  <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] bg-blue-50/50 rounded-full blur-3xl -z-10"></div>
                  
-                 <div className="relative rounded-[2rem] overflow-hidden border-8 border-white shadow-2xl h-[400px] sm:h-[500px]">
+                 <div className="relative rounded-[2rem] overflow-hidden border-8 border-white shadow-[0_20px_50px_-12px_rgba(0,0,0,0.1)] h-[400px] sm:h-[500px]">
                     <img 
                        src="https://images.unsplash.com/photo-1551076805-e18690c5e56c?q=80&w=1000&auto=format&fit=crop" 
                        alt="طبيب يتابع حالة مريض" 
-                       className="w-full h-full object-cover" 
+                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" 
                     />
                  </div>
 
                  {/* Floating Stat 1 */}
-                 <div className="absolute -bottom-8 -right-4 sm:-right-8 bg-blue-100 p-6 sm:p-8 rounded-3xl shadow-xl border-4 border-white flex flex-col items-center justify-center z-20">
+                 <div className="absolute -bottom-8 -right-4 sm:-right-8 glass-panel p-6 sm:p-8 rounded-3xl border-4 border-white flex flex-col items-center justify-center z-20 hover:-translate-y-1 transition-transform duration-300">
                     <span className="text-3xl sm:text-4xl font-black text-secondary mb-1">5K+</span>
                     <span className="text-xs sm:text-sm font-bold text-secondary/70 uppercase">مرضى سعداء</span>
                  </div>
 
                  {/* Floating Stat 2 */}
-                 <div className="absolute top-10 -left-6 sm:-left-10 bg-[#e0dfff] p-6 rounded-3xl shadow-xl border-4 border-white flex flex-col items-center justify-center z-20">
+                 <div className="absolute top-10 -left-6 sm:-left-10 glass-panel p-6 rounded-3xl border-4 border-white flex flex-col items-center justify-center z-20 hover:-translate-y-1 transition-transform duration-300">
                     <span className="text-3xl font-black text-secondary mb-1">22</span>
                     <span className="text-xs font-bold text-secondary/70 uppercase">كادر طبي</span>
                  </div>
@@ -243,7 +243,7 @@ export default function Home() {
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-12 sm:mb-16">
             <h2 className="text-sm font-bold text-primary mb-3 tracking-widest uppercase">خدماتنا</h2>
-            <h3 className="text-3xl sm:text-4xl font-black text-secondary leading-tight">
+            <h3 className="text-3xl sm:text-4xl font-black text-secondary heading-modern">
                نتشرف بتقديم خدمات خبيرة <br className="hidden sm:block" /> في مجالات طبية مختلفة
             </h3>
           </div>
@@ -256,7 +256,14 @@ export default function Home() {
               const colorIdx = idx % bgColors.length;
 
               return (
-                <div key={service.id} className="bg-white rounded-3xl p-5 sm:p-6 hover:shadow-xl hover:shadow-primary/5 hover:-translate-y-1.5 transition-all duration-300 border border-gray-100 group flex flex-col h-full relative overflow-hidden">
+                <motion.div 
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, margin: "-100px" }}
+                  transition={{ duration: 0.5, delay: colorIdx * 0.1 }}
+                  key={service.id} 
+                  className="bg-white rounded-3xl p-5 sm:p-6 hover:shadow-2xl hover:shadow-primary/10 hover:-translate-y-2 transition-all duration-300 border border-gray-100/50 group flex flex-col h-full relative overflow-hidden"
+                >
                   <div className="absolute top-0 left-0 w-32 h-32 bg-gradient-to-br from-gray-50 to-transparent -z-10 rounded-br-[3rem] group-hover:scale-150 transition-transform duration-700"></div>
                   
                   <div className="flex items-start justify-between mb-5">
@@ -275,10 +282,10 @@ export default function Home() {
                   
                   <div className="mt-auto pt-4 border-t border-gray-100">
                     <a href={`https://wa.me/${siteSettings.whatsappNumber}?text=أريد الاستفسار عن خدمة ${service.title}`} className="text-xs font-bold text-secondary flex items-center gap-1.5 hover:text-primary transition-colors">
-                      <Icons.ArrowRight className="w-3.5 h-3.5 -rotate-180" /> طلب الخدمة
+                      <Icons.ArrowRight className="w-3.5 h-3.5 -rotate-180 transition-transform group-hover:-translate-x-1" /> طلب الخدمة
                     </a>
                   </div>
-                </div>
+                </motion.div>
               );
             })}
           </div>
@@ -298,7 +305,7 @@ export default function Home() {
               
               {/* Text Layout (RTL -> Right) */}
               <div className="order-1 lg:order-1 relative z-10">
-                 <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-secondary leading-tight mb-6">
+                 <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-secondary heading-modern mb-6">
                     سجلنا يتحدث عن نفسه. الكثير من العملاء اختارونا وحظوا بتجارب إيجابية.
                  </h2>
                  <p className="text-gray-500 font-medium leading-relaxed mb-8 text-lg">

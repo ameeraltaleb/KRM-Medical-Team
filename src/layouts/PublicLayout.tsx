@@ -19,7 +19,7 @@ export default function PublicLayout() {
   return (
     <div className="min-h-screen flex flex-col font-sans bg-white relative">
       {/* Clean Navbar */}
-      <header className="bg-white sticky top-0 z-50 shadow-sm">
+      <header className="bg-white/80 backdrop-blur-md sticky top-0 z-50 shadow-[0_4px_30px_rgba(0,0,0,0.03)] border-b border-gray-100/50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-20">
             {/* Logo */}

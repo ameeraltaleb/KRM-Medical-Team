@@ -14,6 +14,10 @@
   body {
     @apply font-sans bg-[var(--color-background)] text-secondary antialiased;
   }
+  
+  ::selection {
+    @apply bg-primary/20 text-primary-dark;
+  }
 }
 
 @layer utilities {
@@ -26,5 +30,13 @@
   }
   .hide-scrollbar::-webkit-scrollbar {
     display: none;
+  }
+  
+  .glass-panel {
+    @apply bg-white/70 backdrop-blur-lg border border-white/50 shadow-xl;
+  }
+  
+  .heading-modern {
+    @apply tracking-tight leading-tight lg:leading-tight;
   }
 }
