@@ -13,7 +13,7 @@ export default function Home() {
     <div className="flex flex-col w-full bg-white">
       
       {/* Hero Section */}
-      <section className="relative pt-20 pb-40 lg:pt-28 lg:pb-56 flex items-center justify-center overflow-visible bg-gradient-to-br from-primary/10 via-white to-white">
+      <section className="relative min-h-[95vh] pt-20 pb-48 lg:pt-28 lg:pb-64 flex items-center justify-center overflow-visible bg-gradient-to-br from-primary/10 via-white to-white">
         <div className="absolute inset-0 z-0 opacity-40">
            {/* Abstract shapes matching the medical theme */}
            <div className="absolute top-0 right-0 w-full h-[500px] bg-gradient-to-b from-primary/10 to-transparent"></div>
@@ -85,7 +85,7 @@ export default function Home() {
       </section>
 
       {/* Feature Cards Overlap */}
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-20 -mt-24 lg:-mt-32 mb-16 lg:mb-24">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-20 -mt-32 lg:-mt-40 mb-20 lg:mb-32">
          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
             {featuresList.map((feature, i) => {
               const Icon = Icons[feature.icon as keyof typeof Icons] as React.ElementType;
@@ -119,8 +119,8 @@ export default function Home() {
       </div>
 
       {/* About Amenities Section */}
-      <section className="py-16 sm:py-24 px-4 sm:px-6 lg:px-8 bg-white relative overflow-hidden" id="about">
-        <div className="max-w-7xl mx-auto">
+      <section className="min-h-[80vh] py-24 sm:py-32 px-4 sm:px-6 lg:px-8 bg-white relative overflow-hidden flex items-center" id="about">
+        <div className="max-w-7xl mx-auto w-full">
            <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
               
               {/* Text Layout (RTL -> Right) */}
@@ -210,7 +210,7 @@ export default function Home() {
       </section>
 
       {/* Stats Banner Section */}
-      <section className="pb-16 sm:pb-24 px-4 sm:px-6 lg:px-8 bg-white relative z-20">
+      <section className="py-20 sm:py-28 px-4 sm:px-6 lg:px-8 bg-white relative z-20">
         <div className="max-w-7xl mx-auto">
           <div className="bg-secondary rounded-[2.5rem] shadow-[0_20px_50px_-12px_rgba(0,0,0,0.3)] relative overflow-hidden">
             {/* Background Details */}
@@ -239,8 +239,12 @@ export default function Home() {
       </section>
 
       {/* Services Grid Section */}
-      <section id="services" className="py-16 sm:py-24 px-4 sm:px-6 lg:px-8 bg-gray-50/80 border-y border-gray-100">
-        <div className="max-w-7xl mx-auto">
+      <section id="services" className="min-h-screen py-24 sm:py-32 px-4 sm:px-6 lg:px-8 bg-gray-50 border-y border-gray-100 flex flex-col justify-center relative">
+        {/* Brand color accents */}
+        <div className="absolute top-0 right-1/4 w-[600px] h-[600px] bg-primary/5 rounded-full blur-3xl -z-10"></div>
+        <div className="absolute bottom-0 left-1/4 w-[400px] h-[400px] bg-blue-50/80 rounded-full blur-3xl -z-10"></div>
+        
+        <div className="max-w-7xl mx-auto w-full">
           <div className="text-center mb-12 sm:mb-16">
             <h2 className="text-sm font-bold text-primary mb-3 tracking-widest uppercase">خدماتنا</h2>
             <h3 className="text-3xl sm:text-4xl font-black text-secondary heading-modern">
@@ -299,8 +303,9 @@ export default function Home() {
       </section>
 
       {/* Track Record & Testimonials */}
-      <section className="py-16 sm:py-24 px-4 sm:px-6 lg:px-8 bg-white" id="testimonials">
-        <div className="max-w-7xl mx-auto">
+      <section className="min-h-screen py-24 sm:py-32 px-4 sm:px-6 lg:px-8 bg-white flex flex-col justify-center relative overflow-hidden" id="testimonials">
+        <div className="absolute top-1/2 right-0 w-[800px] h-[800px] bg-primary/5 rounded-full blur-3xl -z-10 translate-x-1/2 -translate-y-1/2"></div>
+        <div className="max-w-7xl mx-auto w-full">
            <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
               
               {/* Text Layout (RTL -> Right) */}
@@ -386,8 +391,8 @@ export default function Home() {
       </section>
 
       {/* Pricing/Packages Section */}
-      <section className="py-12 sm:py-24 px-4 sm:px-6 lg:px-8" id="packages">
-        <div className="max-w-7xl mx-auto">
+      <section className="min-h-screen py-24 sm:py-32 px-4 sm:px-6 lg:px-8 bg-slate-50 flex flex-col justify-center relative" id="packages">
+        <div className="max-w-7xl mx-auto w-full relative z-10">
           <div className="text-center mb-10 sm:mb-16">
             <h2 className="text-2xl sm:text-4xl font-black text-secondary mb-4">خطط الرعاية الشاملة</h2>
             <p className="text-gray-500 font-medium max-w-2xl mx-auto">اختر الباقة الأنسب لاحتياجاتك، صممنا حلولاً مرنة لتناسب جميع الحالات الطبية.</p>
@@ -449,8 +454,8 @@ export default function Home() {
       </section>
 
       {/* Blog/Articles Snippet */}
-      <section className="py-12 sm:py-20 px-4 sm:px-6 lg:px-8 bg-background border-t border-gray-100" id="blog">
-         <div className="max-w-7xl mx-auto">
+      <section className="py-24 sm:py-32 px-4 sm:px-6 lg:px-8 bg-white border-t border-gray-100 flex flex-col justify-center" id="blog">
+         <div className="max-w-7xl mx-auto w-full">
             <div className="text-center mb-10 sm:mb-16">
               <h2 className="text-2xl sm:text-4xl font-black text-secondary mb-4">المدونة الطبية</h2>
               <p className="text-gray-500 font-medium">اطلع على أحدث المقالات والنصائح للتعامل مع مختلف الحالات الصحية المنزلية.</p>
