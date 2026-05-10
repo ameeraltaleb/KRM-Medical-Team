@@ -13,7 +13,7 @@ export default function Home() {
     <div className="flex flex-col w-full bg-white">
       
       {/* Hero Section */}
-      <section className="relative min-h-[95vh] pt-20 pb-48 lg:pt-28 lg:pb-64 flex items-center justify-center overflow-visible bg-gradient-to-br from-primary/10 via-white to-white">
+      <section className="relative min-h-[auto] sm:min-h-[95vh] pt-12 pb-32 sm:pt-20 sm:pb-48 lg:pt-28 lg:pb-64 flex items-center justify-center overflow-visible bg-gradient-to-br from-primary/10 via-white to-white">
         <div className="absolute inset-0 z-0 opacity-40">
            {/* Abstract shapes matching the medical theme */}
            <div className="absolute top-0 right-0 w-full h-[500px] bg-gradient-to-b from-primary/10 to-transparent"></div>
@@ -31,7 +31,7 @@ export default function Home() {
               transition={{ duration: 0.8 }}
               className="flex flex-col gap-6"
             >
-              <h1 className="text-4xl sm:text-5xl lg:text-get-6xl font-black heading-modern text-transparent bg-clip-text bg-gradient-to-l from-secondary to-gray-600">
+              <h1 className="text-3xl sm:text-5xl lg:text-get-6xl font-black heading-modern text-transparent bg-clip-text bg-gradient-to-l from-secondary to-gray-600">
                 تغيير حياتك، <br/>
                 <span className="text-primary font-bold">استعادة صحتك</span>
               </h1>
@@ -119,13 +119,13 @@ export default function Home() {
       </div>
 
       {/* About Amenities Section */}
-      <section className="min-h-[80vh] py-24 sm:py-32 px-4 sm:px-6 lg:px-8 bg-white relative overflow-hidden flex items-center" id="about">
+      <section className="min-h-[auto] sm:min-h-[80vh] py-16 sm:py-32 px-4 sm:px-6 lg:px-8 bg-white relative overflow-hidden flex items-center" id="about">
         <div className="max-w-7xl mx-auto w-full">
            <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
               
               {/* Text Layout (RTL -> Right) */}
               <div className="order-1 lg:order-1 relative z-10">
-                 <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-secondary heading-modern mb-6">
+                 <h2 className="text-2xl sm:text-4xl lg:text-5xl font-black text-secondary heading-modern mb-6">
                     نوفر أفضل رعاية طبية <br className="hidden sm:block" /> ووسائل راحة للمرضى
                  </h2>
                  <p className="text-gray-500 font-medium leading-relaxed mb-8 text-lg">
@@ -184,7 +184,7 @@ export default function Home() {
                  {/* Decorative background */}
                  <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] bg-blue-50/50 rounded-full blur-3xl -z-10"></div>
                  
-                 <div className="relative rounded-[2rem] overflow-hidden border-8 border-white shadow-[0_20px_50px_-12px_rgba(0,0,0,0.1)] h-[400px] sm:h-[500px]">
+                 <div className="relative rounded-[2rem] overflow-hidden border-8 border-white shadow-[0_20px_50px_-12px_rgba(0,0,0,0.1)] h-[320px] sm:h-[500px]">
                     <img 
                        src="https://images.unsplash.com/photo-1551076805-e18690c5e56c?q=80&w=1000&auto=format&fit=crop" 
                        alt="طبيب يتابع حالة مريض" 
@@ -210,7 +210,7 @@ export default function Home() {
       </section>
 
       {/* Stats Banner Section */}
-      <section className="py-20 sm:py-28 px-4 sm:px-6 lg:px-8 bg-white relative z-20">
+      <section className="py-12 sm:py-28 px-4 sm:px-6 lg:px-8 bg-white relative z-20">
         <div className="max-w-7xl mx-auto">
           <div className="bg-secondary rounded-[2.5rem] shadow-[0_20px_50px_-12px_rgba(0,0,0,0.3)] relative overflow-hidden">
             {/* Background Details */}
@@ -220,13 +220,13 @@ export default function Home() {
                <Icons.Plus className="absolute right-10 top-10 w-16 h-16 text-white/5" />
             </div>
 
-            <div className="grid grid-cols-2 lg:grid-cols-4 p-8 sm:p-12 relative z-10 gap-y-12 items-center justify-items-center">
+            <div className="grid grid-cols-2 lg:grid-cols-4 p-6 sm:p-12 relative z-10 gap-y-8 sm:gap-y-12 items-center justify-items-center">
               {statsList.map((stat, index) => (
                 <div key={stat.id} className={cn(
                   "flex flex-col items-center text-center w-full relative group",
                   index !== 3 && "lg:after:content-[''] lg:after:absolute lg:after:top-1/2 lg:after:-translate-y-1/2 lg:after:left-0 lg:after:h-16 lg:after:w-px lg:after:bg-white/10"
                 )}>
-                   <div className="text-4xl sm:text-5xl font-black text-white mb-3 flex items-baseline gap-1 group-hover:scale-110 transition-transform duration-300">
+                   <div className="text-3xl sm:text-5xl font-black text-white mb-2 sm:mb-3 flex items-baseline gap-1 group-hover:scale-110 transition-transform duration-300">
                       <span className="text-transparent bg-clip-text bg-gradient-to-br from-blue-300 to-primary-light drop-shadow-sm">{stat.value}</span>
                       <span className="text-primary-light text-2xl sm:text-3xl">{stat.suffix}</span>
                    </div>
@@ -239,7 +239,7 @@ export default function Home() {
       </section>
 
       {/* Services Grid Section */}
-      <section id="services" className="min-h-screen py-24 sm:py-32 px-4 sm:px-6 lg:px-8 bg-gray-50 border-y border-gray-100 flex flex-col justify-center relative">
+      <section id="services" className="min-h-[auto] sm:min-h-screen py-16 sm:py-32 px-4 sm:px-6 lg:px-8 bg-gray-50 border-y border-gray-100 flex flex-col justify-center relative">
         {/* Brand color accents */}
         <div className="absolute top-0 right-1/4 w-[600px] h-[600px] bg-primary/5 rounded-full blur-3xl -z-10"></div>
         <div className="absolute bottom-0 left-1/4 w-[400px] h-[400px] bg-blue-50/80 rounded-full blur-3xl -z-10"></div>
@@ -303,14 +303,14 @@ export default function Home() {
       </section>
 
       {/* Track Record & Testimonials */}
-      <section className="min-h-screen py-24 sm:py-32 px-4 sm:px-6 lg:px-8 bg-white flex flex-col justify-center relative overflow-hidden" id="testimonials">
+      <section className="min-h-[auto] sm:min-h-screen py-16 sm:py-32 px-4 sm:px-6 lg:px-8 bg-white flex flex-col justify-center relative overflow-hidden" id="testimonials">
         <div className="absolute top-1/2 right-0 w-[800px] h-[800px] bg-primary/5 rounded-full blur-3xl -z-10 translate-x-1/2 -translate-y-1/2"></div>
         <div className="max-w-7xl mx-auto w-full">
            <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
               
               {/* Text Layout (RTL -> Right) */}
               <div className="order-1 lg:order-1 relative z-10">
-                 <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-secondary heading-modern mb-6">
+                 <h2 className="text-2xl sm:text-4xl lg:text-5xl font-black text-secondary heading-modern mb-6">
                     سجلنا يتحدث عن نفسه. الكثير من العملاء اختارونا وحظوا بتجارب إيجابية.
                  </h2>
                  <p className="text-gray-500 font-medium leading-relaxed mb-8 text-lg">
@@ -349,7 +349,7 @@ export default function Home() {
 
            {/* Single Quote Box overlapping below */}
            <div className="mt-16 lg:mt-24 max-w-4xl mx-auto">
-              <div className="bg-[#f0f4ff] rounded-[2.5rem] p-8 sm:p-12 relative overflow-hidden">
+              <div className="bg-[#f0f4ff] rounded-[2.5rem] p-6 sm:p-12 relative overflow-hidden">
                  <Icons.Quote className="absolute top-8 left-8 w-16 h-16 text-primary/10  rotate-180" />
                  
                  <div className="relative z-10 flex flex-col md:flex-row gap-8 items-center md:items-start text-center text-right sm:text-right">
@@ -391,7 +391,7 @@ export default function Home() {
       </section>
 
       {/* Pricing/Packages Section */}
-      <section className="min-h-screen py-24 sm:py-32 px-4 sm:px-6 lg:px-8 bg-slate-50 flex flex-col justify-center relative" id="packages">
+      <section className="min-h-[auto] sm:min-h-screen py-16 sm:py-32 px-4 sm:px-6 lg:px-8 bg-slate-50 flex flex-col justify-center relative" id="packages">
         <div className="max-w-7xl mx-auto w-full relative z-10">
           <div className="text-center mb-10 sm:mb-16">
             <h2 className="text-2xl sm:text-4xl font-black text-secondary mb-4">خطط الرعاية الشاملة</h2>
@@ -454,7 +454,7 @@ export default function Home() {
       </section>
 
       {/* Blog/Articles Snippet */}
-      <section className="py-24 sm:py-32 px-4 sm:px-6 lg:px-8 bg-white border-t border-gray-100 flex flex-col justify-center" id="blog">
+      <section className="py-16 sm:py-32 px-4 sm:px-6 lg:px-8 bg-white border-t border-gray-100 flex flex-col justify-center" id="blog">
          <div className="max-w-7xl mx-auto w-full">
             <div className="text-center mb-10 sm:mb-16">
               <h2 className="text-2xl sm:text-4xl font-black text-secondary mb-4">المدونة الطبية</h2>
